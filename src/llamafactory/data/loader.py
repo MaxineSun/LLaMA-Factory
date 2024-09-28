@@ -244,9 +244,6 @@ def get_dataset(
             raise ValueError("Turn off `streaming` when saving dataset to disk.")
 
     # Load and preprocess dataset
-    print("===========")
-    print(training_args)
-    print(l)
     with training_args.main_process_first(desc="load dataset"):
         dataset = _get_merged_dataset(data_args.dataset, model_args, data_args, training_args, stage)
         eval_dataset = _get_merged_dataset(data_args.eval_dataset, model_args, data_args, training_args, stage)
