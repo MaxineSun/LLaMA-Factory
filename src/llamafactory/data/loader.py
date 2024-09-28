@@ -244,6 +244,7 @@ def get_dataset(
             raise ValueError("Turn off `streaming` when saving dataset to disk.")
 
     # Load and preprocess dataset
+    print("===========")
     print(training_args)
     print(l)
     with training_args.main_process_first(desc="load dataset"):
