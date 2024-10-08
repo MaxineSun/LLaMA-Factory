@@ -8,7 +8,7 @@ finetuning_type: full
 deepspeed: examples/deepspeed/ds_z3_config.json
 
 ### dataset
-dataset: mllm_demo,identity
+dataset: de_0, de_10, de_11
 template: qwen2_vl
 cutoff_len: 1024
 max_samples: 1000
