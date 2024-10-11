@@ -250,7 +250,7 @@ def align_dataset(
             desc="Converting format of dataset",
         )
 
-    print(data)
+    print(dataset)
     print(d)
 
     return dataset.map(
