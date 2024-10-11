@@ -103,8 +103,6 @@ def _load_single_dataset(
         if isinstance(dataset, MsDataset):
             dataset = dataset.to_hf_dataset()
     else:
-        print(data_path,data_name,data_dir,data_files)
-        print(d)
         dataset = load_dataset(
             path=data_path,
             name=data_name,
@@ -116,6 +114,8 @@ def _load_single_dataset(
             streaming=(data_args.streaming and (dataset_attr.load_from != "file")),
             trust_remote_code=True,
         )
+    print(dataset)
+    print(d)
 
     if data_args.streaming and (dataset_attr.load_from == "file"):  # faster than specifying streaming=True
         dataset = dataset.to_iterable_dataset()  # TODO: add num shards parameter
