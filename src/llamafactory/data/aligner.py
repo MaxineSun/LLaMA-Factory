@@ -88,7 +88,6 @@ def convert_alpaca(
 
     query = []
     print(dataset_attr)
-    print(example)
     print(p)
     if dataset_attr.prompt and example[dataset_attr.prompt]:
         query.append(example[dataset_attr.prompt])
