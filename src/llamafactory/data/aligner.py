@@ -87,7 +87,7 @@ def convert_alpaca(
             prompt.append({"role": Role.ASSISTANT.value, "content": old_response})
 
     query = []
-    print(dataset_attr)
+    print(dataset_attr.prompt)
     print(p)
     if dataset_attr.prompt and example[dataset_attr.prompt]:
         query.append(example[dataset_attr.prompt])
