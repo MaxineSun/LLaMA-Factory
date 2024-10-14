@@ -81,6 +81,8 @@ def convert_alpaca(
     Converts alpaca format dataset to the standard format.
     """
     prompt = []
+    print(dataset_attr.history)
+    print(d)
     if dataset_attr.history and isinstance(example[dataset_attr.history], list):
         for old_prompt, old_response in example[dataset_attr.history]:
             prompt.append({"role": Role.USER.value, "content": old_prompt})
@@ -88,8 +90,6 @@ def convert_alpaca(
 
     query = []
 
-    print(example)
-    print(e)
     if dataset_attr.prompt and example[dataset_attr.prompt]:
         query.append(example[dataset_attr.prompt])
 
