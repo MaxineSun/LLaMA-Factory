@@ -80,13 +80,11 @@ def convert_alpaca(
     r"""
     Converts alpaca format dataset to the standard format.
     """
-    print(dataset_attr.kto_tag)
-    print(d)
     prompt = []
-    # if dataset_attr.history and isinstance(example[dataset_attr.history], list):
-    #     for old_prompt, old_response in example[dataset_attr.history]:
-    #         prompt.append({"role": Role.USER.value, "content": old_prompt})
-    #         prompt.append({"role": Role.ASSISTANT.value, "content": old_response})
+    if dataset_attr.history and isinstance(example[dataset_attr.history], list):
+        for old_prompt, old_response in example[dataset_attr.history]:
+            prompt.append({"role": Role.USER.value, "content": old_prompt})
+            prompt.append({"role": Role.ASSISTANT.value, "content": old_response})
 
     query = []
 
