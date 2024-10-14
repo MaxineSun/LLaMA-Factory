@@ -81,12 +81,12 @@ def convert_alpaca(
     Converts alpaca format dataset to the standard format.
     """
     prompt = []
-    print(dataset_attr.history)
+    print(dataset_attr)
     print(d)
-    if dataset_attr.history and isinstance(example[dataset_attr.history], list):
-        for old_prompt, old_response in example[dataset_attr.history]:
-            prompt.append({"role": Role.USER.value, "content": old_prompt})
-            prompt.append({"role": Role.ASSISTANT.value, "content": old_response})
+    # if dataset_attr.history and isinstance(example[dataset_attr.history], list):
+    #     for old_prompt, old_response in example[dataset_attr.history]:
+    #         prompt.append({"role": Role.USER.value, "content": old_prompt})
+    #         prompt.append({"role": Role.ASSISTANT.value, "content": old_response})
 
     query = []
 
