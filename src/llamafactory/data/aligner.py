@@ -95,8 +95,6 @@ def convert_alpaca(
     #     query.append(example[dataset_attr.query])
 
     prompt.append({"role": Role.USER.value, "content": "\n".join(query)})  # "prompt\nquery"
-    print(prompt)
-    print(p)
 
     if dataset_attr.kto_tag and isinstance(example[dataset_attr.kto_tag], bool):  # kto example
         response = [{"role": Role.ASSISTANT.value, "content": example[dataset_attr.response]}]
