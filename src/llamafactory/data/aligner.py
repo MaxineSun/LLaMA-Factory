@@ -91,8 +91,8 @@ def convert_alpaca(
     # if dataset_attr.prompt and example[dataset_attr.prompt]:
     #     query.append(example[dataset_attr.prompt])
 
-    if dataset_attr.query and example[dataset_attr.query]:
-        query.append(example[dataset_attr.query])
+    # if dataset_attr.query and example[dataset_attr.query]:
+    #     query.append(example[dataset_attr.query])
 
     prompt.append({"role": Role.USER.value, "content": "\n".join(query)})  # "prompt\nquery"
     print(prompt)
