@@ -81,20 +81,22 @@ def convert_alpaca(
     Converts alpaca format dataset to the standard format.
     """
     prompt = []
-    if dataset_attr.history and isinstance(example[dataset_attr.history], list):
-        for old_prompt, old_response in example[dataset_attr.history]:
-            prompt.append({"role": Role.USER.value, "content": old_prompt})
-            prompt.append({"role": Role.ASSISTANT.value, "content": old_response})
+    # if dataset_attr.history and isinstance(example[dataset_attr.history], list):
+    #     for old_prompt, old_response in example[dataset_attr.history]:
+    #         prompt.append({"role": Role.USER.value, "content": old_prompt})
+    #         prompt.append({"role": Role.ASSISTANT.value, "content": old_response})
 
     query = []
 
-    if dataset_attr.prompt and example[dataset_attr.prompt]:
-        query.append(example[dataset_attr.prompt])
+    # if dataset_attr.prompt and example[dataset_attr.prompt]:
+    #     query.append(example[dataset_attr.prompt])
 
     if dataset_attr.query and example[dataset_attr.query]:
         query.append(example[dataset_attr.query])
 
     prompt.append({"role": Role.USER.value, "content": "\n".join(query)})  # "prompt\nquery"
+    print(prompt)
+    print(p)
 
     if dataset_attr.kto_tag and isinstance(example[dataset_attr.kto_tag], bool):  # kto example
         response = [{"role": Role.ASSISTANT.value, "content": example[dataset_attr.response]}]
